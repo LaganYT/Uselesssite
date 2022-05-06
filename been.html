@@ -1,100 +1,13 @@
-<div onload="load()"></div>
-
-
-<h1>Press the spacebar for a sound.</h1>
-<audio></audio>
-<script>
-    function load() {
-var img1 = document.getElementById('icon-p1');
-    img1.style.visibility = '.Block';
-    
-    var img2 = document.getElementById('icon-p2');
-    img2.style.visibility = '.None';
-}
-    function ben() {
-        var img1 = document.getElementById('icon-p1');
-    img1.style.visibility = '.None';
-    
-    var img2 = document.getElementById('icon-p2');
-    img2.style.visibility = '.Block';
-        setTimeout(1000)
-        var img1 = document.getElementById('icon-p1');
-    img1.style.visibility = '.Block';
-    
-    var img2 = document.getElementById('icon-p2');
-    img2.style.visibility = '.None';
-}
-    document.body.onkeyup = function(e){
+ <script>document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         const audio = document.createElement('audio');
-        audio.src = ('ben.mp3')
+        audio.src = ('/ben.mp3')
         audio.play();
-        function(ben)
+        
+        const video = document.createElement('video');
+        video.src = ('/gun.mp4')
+        video.play();
 
     }
 }
-    document.addEventListener('keyup', event => {
-  if (event.code === 'Space') {
-var img1 = document.getElementById('icon-p1');
-    img1.style.visibility = '.None';
-    
-    var img2 = document.getElementById('icon-p2');
-    img2.style.visibility = '.Block';
-  }
-})
-          
 </script>
-<img src="notshoot.png" id="icon-p1" class="Block">
-<img src="shoot.png" id="icon-p2" class="None">
-<!--<script>//REM: Shows the first hidden image
-function showFirst(){
-  //REM: Get the first "none" element (=.None)
-  var tFirst = document.querySelector('.None');
-
-  //REM: Show it
-  if(tFirst){
-    tFirst.classList.remove('None');
-    tFirst.classList.add('Block')
-  }
-};
-
-document.addEventListener("keydown", function(event){
-  if(event.keyCode === 32){
-    event.preventDefault();
-    
-    //REM: Get the current "display" element (=.Block) or the first "none" one (=.None)
-    var tCurrent = document.querySelector('.Block');
-    
-    //REM: If found...
-    if(tCurrent){
-      //REM: Hide current
-      tCurrent.classList.remove('Block');
-      tCurrent.classList.add('None');
-    
-      //REM: Get the next image in the markup
-      var tNext = tCurrent.nextElementSibling;
-      
-      //REM: Show it, if exists
-      if(tNext && tNext.tagName === 'IMG'){
-        tNext.classList.remove('None');
-        tNext.classList.add('Block')
-      }
-      //REM: Else show the first image again
-      else{
-        showFirst()
-      }
-    }
-    //REM: Else show the first image
-    else{
-      showFirst()
-    }
-  }
-    })
-    function load() {
-    var img = document.getElementById('icon-p1');
-    img.style.visibility = '.Block';
-    }
-</script>-->
-<style>.None{display: none}
-.Block{display: block}
-</style>
