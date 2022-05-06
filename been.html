@@ -4,20 +4,7 @@
 <h1>Press the spacebar for a sound.</h1>
 <audio></audio>
 <script>
-    document.body.onkeyup = function(e){
-    if(e.keyCode == 32){
-        const audio = document.createElement('audio');
-        audio.src = ('ben.mp3')
-        audio.play();
-        function ben();
-
-    }
-}
-</script>
-<img src="notshoot.png" id="icon-p1" class="Block">
-<img src="shoot.png" id="icon-p2" class="None">
-<script>
-function load() {
+    function load() {
 var img1 = document.getElementById('icon-p1');
     img1.style.visibility = '.Block';
     
@@ -31,10 +18,38 @@ var img1 = document.getElementById('icon-p1');
     var img2 = document.getElementById('icon-p2');
     img2.style.visibility = '.Block';
         setTimeout(1000)
-        function load();
-}
+        var img1 = document.getElementById('icon-p1');
+    img1.style.visibility = '.Block';
     
+    var img2 = document.getElementById('icon-p2');
+    img2.style.visibility = '.None';
+}
+    document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        const audio = document.createElement('audio');
+        audio.src = ('ben.mp3')
+        audio.play();
+        ben()
+
+    }
+}
+    document.addEventListener("space", function(ben) {
+ var img1 = document.getElementById('icon-p1');
+    img1.style.visibility = '.None';
+    
+    var img2 = document.getElementById('icon-p2');
+    img2.style.visibility = '.Block';
+        setTimeout(1000)
+        var img1 = document.getElementById('icon-p1');
+    img1.style.visibility = '.Block';
+    
+    var img2 = document.getElementById('icon-p2');
+    img2.style.visibility = '.None';
+    });
+          
 </script>
+<img src="notshoot.png" id="icon-p1" class="Block">
+<img src="shoot.png" id="icon-p2" class="None">
 <!--<script>//REM: Shows the first hidden image
 function showFirst(){
   //REM: Get the first "none" element (=.None)
