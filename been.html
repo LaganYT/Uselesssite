@@ -47,27 +47,6 @@ document.addEventListener("keydown", function(event){
         tNext.classList.remove('None');
         tNext.classList.add('Block')
       }
-         function load() {
-              event.preventDefault();
-    
-    //REM: Get the current "display" element (=.Block) or the first "none" one (=.None)
-    var tCurrent = document.querySelector('.Block');
-    
-    //REM: If found...
-    if(tCurrent){
-      //REM: Hide current
-      tCurrent.classList.remove('Block');
-      tCurrent.classList.add('None');
-    
-      //REM: Get the next image in the markup
-      var tNext = tCurrent.nextElementSibling;
-      
-      //REM: Show it, if exists
-      if(tNext && tNext.tagName === 'IMG'){
-        tNext.classList.remove('None');
-        tNext.classList.add('Block')
-      }
-         load()
       //REM: Else show the first image again
       else{
         showFirst()
@@ -78,7 +57,13 @@ document.addEventListener("keydown", function(event){
       showFirst()
     }
   }
-})</script>
+    })
+    function load() {
+    var img = document.getElementById('icon-p1');
+    img.style.visibility = 'visible';
+    }
+load();
+</script>
 <style>.None{display: none}
 .Block{display: block}
 </style>
