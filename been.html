@@ -8,6 +8,7 @@
     
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
+        displayNextImage()
         const audio = document.createElement('audio');
         audio.src = ('ben.mp3')
         audio.play();
