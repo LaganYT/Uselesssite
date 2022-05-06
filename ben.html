@@ -1,63 +1,40 @@
-
-<h1>Press the spacebar for a sound.</h1>
-<audio></audio>
-<script>
-    document.body.onkeyup = function(e){
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ul>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-12">
+       <script>
+         $('document').ready(function(){
+  $gif = $('img').first();
+  
+    
+  });
+         document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         const audio = document.createElement('audio');
-        audio.src = ('ben.mp3')
+        audio.src = ('/ben.mp3')
         audio.play();
+      src = $gif.attr('src');
+    
+    $gif.attr('src', src);
 
     }
 }
 </script>
-
-<img src="notshoot.png" id="icon-p1" class="None" alt="1">
-<img src="shoot.png" id="icon-p2" class="None" alt="2">
-<script>//REM: Shows the first hidden image
-function showFirst(){
-  //REM: Get the first "none" element (=.None)
-  var tFirst = document.querySelector('.None');
-
-  //REM: Show it
-  if(tFirst){
-    tFirst.classList.remove('None');
-    tFirst.classList.add('Block')
-  }
-};
-
-document.addEventListener("keydown", function(event){
-  if(event.keyCode === 32){
-    event.preventDefault();
-    
-    //REM: Get the current "display" element (=.Block) or the first "none" one (=.None)
-    var tCurrent = document.querySelector('.Block');
-    
-    //REM: If found...
-    if(tCurrent){
-      //REM: Hide current
-      tCurrent.classList.remove('Block');
-      tCurrent.classList.add('None');
-    
-      //REM: Get the next image in the markup
-      var tNext = tCurrent.nextElementSibling;
+  
       
-      //REM: Show it, if exists
-      if(tNext && tNext.tagName === 'IMG'){
-        tNext.classList.remove('None');
-        tNext.classList.add('Block')
-      }
-      //REM: Else show the first image again
-      else{
-        showFirst()
-      }
-    }
-    //REM: Else show the first image
-    else{
-      showFirst()
-    }
-  }
-})</script>
-<style>.None{display: none}
-.Block{display: block}
-</style>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-12">
+      <img src="https://i.ibb.co/j4F63p6/ezgif-com-gif-maker.gif" alt="" />
+    </div>
+  </div>
+</div>
