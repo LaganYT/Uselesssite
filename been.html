@@ -33,8 +33,9 @@ var img1 = document.getElementById('icon-p1');
 
     }
 }
-    document.addEventListener("space", function(ben) {
- var img1 = document.getElementById('icon-p1');
+    document.addEventListener('keyup', event => {
+  if (event.code === 'Space') {
+var img1 = document.getElementById('icon-p1');
     img1.style.visibility = '.None';
     
     var img2 = document.getElementById('icon-p2');
@@ -45,7 +46,8 @@ var img1 = document.getElementById('icon-p1');
     
     var img2 = document.getElementById('icon-p2');
     img2.style.visibility = '.None';
-    });
+  }
+})
           
 </script>
 <img src="notshoot.png" id="icon-p1" class="Block">
