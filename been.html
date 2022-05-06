@@ -1,6 +1,12 @@
 <h1>Press the spacebar for a sound.</h1>
 <audio></audio>
-<script>  document.body.onkeyup = function(e){
+<script>
+     function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("icon-p2").src = images[x];
+          }
+    
+    document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         const audio = document.createElement('audio');
         audio.src = ('ben.mp3')
