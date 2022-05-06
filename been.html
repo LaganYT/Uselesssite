@@ -9,13 +9,33 @@
         const audio = document.createElement('audio');
         audio.src = ('ben.mp3')
         audio.play();
+        ben()
 
     }
 }
 </script>
 <img src="notshoot.png" id="icon-p1" class="Block">
 <img src="shoot.png" id="icon-p2" class="None">
-<script>//REM: Shows the first hidden image
+<script>
+function load() {
+var img1 = document.getElementById('icon-p1');
+    img1.style.visibility = '.Block';
+    
+    var img2 = document.getElementById('icon-p2');
+    img2.style.visibility = '.None';
+}
+    function ben() {
+setTimeout(1000)
+        var img1 = document.getElementById('icon-p1');
+    img1.style.visibility = '.None';
+    
+    var img2 = document.getElementById('icon-p2');
+    img2.style.visibility = '.Block';
+        
+}
+    
+</script>
+<!--<script>//REM: Shows the first hidden image
 function showFirst(){
   //REM: Get the first "none" element (=.None)
   var tFirst = document.querySelector('.None');
@@ -63,7 +83,7 @@ document.addEventListener("keydown", function(event){
     var img = document.getElementById('icon-p1');
     img.style.visibility = '.Block';
     }
-</script>
+</script>-->
 <style>.None{display: none}
 .Block{display: block}
 </style>
