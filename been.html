@@ -9,9 +9,16 @@
         const audio = document.createElement('audio');
         audio.src = ('ben.mp3')
         audio.play();
-        ben()
 
     }
+}
+    document.body.onkeyup = function(ee) {
+  if (ee.key == " " ||
+      ee.code == "Space" ||      
+      ee.keyCode == 32      
+  ) {
+ben();
+  }
 }
 </script>
 <img src="notshoot.png" id="icon-p1" class="Block">
