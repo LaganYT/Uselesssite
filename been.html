@@ -1,0 +1,49 @@
+<img src="notshoot.png" id="icon-p1" class="None" alt="1">
+<img src="shoot.png" id="icon-p2" class="None" alt="2">
+<script>//REM: Shows the first hidden image
+function showFirst(){
+  //REM: Get the first "none" element (=.None)
+  var tFirst = document.querySelector('.None');
+
+  //REM: Show it
+  if(tFirst){
+    tFirst.classList.remove('None');
+    tFirst.classList.add('Block')
+  }
+};
+
+document.addEventListener("keydown", function(event){
+  if(event.keyCode === 32){
+    event.preventDefault();
+    
+    //REM: Get the current "display" element (=.Block) or the first "none" one (=.None)
+    var tCurrent = document.querySelector('.Block');
+    
+    //REM: If found...
+    if(tCurrent){
+      //REM: Hide current
+      tCurrent.classList.remove('Block');
+      tCurrent.classList.add('None');
+    
+      //REM: Get the next image in the markup
+      var tNext = tCurrent.nextElementSibling;
+      
+      //REM: Show it, if exists
+      if(tNext && tNext.tagName === 'IMG'){
+        tNext.classList.remove('None');
+        tNext.classList.add('Block')
+      }
+      //REM: Else show the first image again
+      else{
+        showFirst()
+      }
+    }
+    //REM: Else show the first image
+    else{
+      showFirst()
+    }
+  }
+})</script>
+<style>.None{display: none}
+.Block{display: block}
+</style>
